@@ -1,6 +1,7 @@
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
 	enabled: process.env.ANALYZE === 'true'
 });
+const withTM = require('next-transpile-modules')(['@uniswap/widgets', '@uniswap/conedison']); // pass the modules you would like to see transpiled
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -37,4 +38,4 @@ const nextConfig = {
 	experimental: {}
 };
 
-module.exports = withBundleAnalyzer(nextConfig);
+module.exports = withTM(withBundleAnalyzer(nextConfig));

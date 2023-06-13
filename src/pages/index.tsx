@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { AggregatorContainer } from '~/components/Aggregator';
 import ConnectButton from '~/components/Aggregator/ConnectButton';
 import Header from '~/components/Aggregator/Header';
@@ -23,7 +22,7 @@ export async function getStaticProps() {
 
 export default function Aggregator(props) {
 	return (
-		<Layout title={`Meta-dex aggregator - DefiLlama`} defaultSEO>
+		<Layout title={`SpaceSwap`} defaultSEO>
 			<Header>
 				<ConnectButton {...props} />
 			</Header>

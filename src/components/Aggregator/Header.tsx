@@ -1,6 +1,6 @@
 import { Heading, Image } from '@chakra-ui/react';
 import styled from 'styled-components';
-import loaderImg from '~/public/loader.png';
+import loaderImg from '~/public/zebra.png';
 
 const Wrapper = styled.div`
 	position: absolute;
@@ -30,17 +30,17 @@ const Header = ({ children }) => {
 				fontSize={['26px', '26px', '32px', '32px']}
 				display="flex"
 				alignItems="center"
-				onClick={() => window.open('https://swap.openspace.gg/')}
+				// onClick={() => window.open('https://swap.openspace.gg/')}
 				cursor="pointer"
 			>
 				<Image
 					src={loaderImg.src}
-					w={['28px', '28px', '36px', '36px']}
-					h={['28px', '28px', '36px', '36px']}
-					mr="8px"
+					w={300}
+					// h={['28px', '28px', '36px', '36px']}
+					// mr="8px"
 					alt="logo"
 				/>
-				ZebraSwap
+				{/* ZebraSwap */}
 			</Name>
 			{children}
 		</Wrapper>

@@ -13,7 +13,7 @@ export async function getStaticProps() {
 
 export default function Aggregator(props) {
 	return (
-		<Layout title={`Spaceswap`} defaultSEO>
+		<Layout title={`Zebraswap`} defaultSEO>
 			<ConnectButton />
 			<AggregatorContainer {...props} />
 		</Layout>

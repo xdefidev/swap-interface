@@ -27,21 +27,21 @@ export default function FaqWrapper() {
 					<h2>
 						<AccordionButton>
 							<Box flex="1" textAlign="left">
-								Does Spaceswap take any fees?
+								Does Zebraswap take any fees?
 							</Box>
 							<AccordionIcon />
 						</AccordionButton>
 					</h2>
 					<AccordionPanel pb={4}>
-						Spaceswap takes 0 fee on swaps.
+						Zebraswap takes 0 fee on swaps.
 						<br />
-						<br /> You'll get the exact same price swapping through Spaceswap as what you'd get swapping through the
+						<br /> You'll get the exact same price swapping through Zebraswap as what you'd get swapping through the
 						chosen aggregator directly.
 						<br />
 						<br />
 						We do add our referral code to swaps though, so, for aggregators with revenue sharing, they will send us
 						part of the fee they earn. This is not an extra fee, you'd be charged the same fee anyway, but now a small
-						part of it is shared with Spaceswap. We also integrate aggregators with no fee sharing the best price, and
+						part of it is shared with Zebraswap. We also integrate aggregators with no fee sharing the best price, and
 						in those cases we don't make any money.
 					</AccordionPanel>
 				</AccordionItem>
@@ -83,14 +83,14 @@ export default function FaqWrapper() {
 					<h2>
 						<AccordionButton>
 							<Box flex="1" textAlign="left">
-								Will I be eligible for aggregator airdrops if I swap through Spaceswap?
+								Will I be eligible for aggregator airdrops if I swap through Zebraswap?
 							</Box>
 							<AccordionIcon />
 						</AccordionButton>
 					</h2>
 					<AccordionPanel pb={4}>
 						We execute swaps directly against the router of each aggregator, so there's no difference between a swap
-						executed directly from their UI and a swap executed from Spaceswap.
+						executed directly from their UI and a swap executed from Zebraswap.
 						<br />
 						<br />
 						Thus, if any of the aggregators we integrate does an airdrop in the future, all swaps made through them

@@ -40,7 +40,7 @@ const Header = ({ children }) => {
 					mr="8px"
 					alt="logo"
 				/>
-				SpaceSwap
+				ZebraSwap
 			</Name>
 			{children}
 		</Wrapper>

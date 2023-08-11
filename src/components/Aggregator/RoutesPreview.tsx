@@ -81,7 +81,7 @@ const RoutesPreview = () => {
 				</CheckBody>
 
 				<Text color={'gray.300'} textAlign="center" mt={6}>
-					SpaceSwap looks for the best route for your trade <br /> among a variety of Dex Aggregators, guaranteeing you{' '}
+					ZebraSwap looks for the best route for your trade <br /> among a variety of Dex Aggregators, guaranteeing you{' '}
 					<br /> the best execution prices in DeFi.
 				</Text>
 			</Box>

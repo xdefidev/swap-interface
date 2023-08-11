@@ -35,7 +35,7 @@ const Header = ({ children }) => {
 			>
 				<Image
 					src={loaderImg.src}
-					w={300}
+					w={175}
 					// h={['28px', '28px', '36px', '36px']}
 					// mr="8px"
 					alt="logo"

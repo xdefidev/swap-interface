@@ -41,7 +41,7 @@ export default function Layout({ title, children, ...props }: ILayoutProps) {
 			<Head>
 				<title>{title}</title>
 			</Head>
-			<Phishing />
+			{/* <Phishing /> */}
 			<ThemeProvider>
 				<GlobalStyle />
 				<PageWrapper>

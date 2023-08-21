@@ -94,7 +94,7 @@ function HistoryModal({ tokensUrlMap, tokensSymbolsMap }) {
 	});
 	return (
 		<>
-			<Button
+			{/* <Button
 				onClick={onOpen}
 				borderRadius="12px"
 				height="36px"
@@ -103,7 +103,7 @@ function HistoryModal({ tokensUrlMap, tokensSymbolsMap }) {
 				display={{ base: 'none', sm: 'none', lg: 'block', md: 'block' }}
 			>
 				History
-			</Button>
+			</Button> */}
 
 			<Modal isOpen={isOpen} onClose={onClose} size="lg">
 				<ModalOverlay />

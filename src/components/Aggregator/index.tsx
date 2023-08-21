@@ -395,35 +395,33 @@ export function AggregatorContainer({ tokenList, sandwichList }) {
 		const finalSelectedFromToken: IToken =
 			!selectedFromToken && fromToken2
 				? {
-						name: fromToken2.name || fromToken2.address.slice(0, 4) + '...' + fromToken2.address.slice(-4),
-						label: fromToken2.symbol || fromToken2.address.slice(0, 4) + '...' + fromToken2.address.slice(-4),
-						symbol: fromToken2.symbol || '',
-						address: fromToken2.address,
-						value: fromToken2.address,
-						decimals: fromToken2.decimals,
-						logoURI: `https://token-icons.llamao.fi/icons/tokens/${selectedChain.id || 1}/${
-							fromToken2.address
+					name: fromToken2.name || fromToken2.address.slice(0, 4) + '...' + fromToken2.address.slice(-4),
+					label: fromToken2.symbol || fromToken2.address.slice(0, 4) + '...' + fromToken2.address.slice(-4),
+					symbol: fromToken2.symbol || '',
+					address: fromToken2.address,
+					value: fromToken2.address,
+					decimals: fromToken2.decimals,
+					logoURI: `https://token-icons.llamao.fi/icons/tokens/${selectedChain.id || 1}/${fromToken2.address
 						}?h=20&w=20`,
-						chainId: selectedChain.id || 1,
-						geckoId: null
-				  }
+					chainId: selectedChain.id || 1,
+					geckoId: null
+				}
 				: selectedFromToken;
 
 		const finalSelectedToToken: IToken =
 			!selectedToToken && toToken2
 				? {
-						name: toToken2.name || toToken2.address.slice(0, 4) + '...' + toToken2.address.slice(-4),
-						label: toToken2.symbol || toToken2.address.slice(0, 4) + '...' + toToken2.address.slice(-4),
-						symbol: toToken2.symbol || '',
-						address: toToken2.address,
-						value: toToken2.address,
-						decimals: toToken2.decimals,
-						logoURI: `https://token-icons.llamao.fi/icons/tokens/${selectedChain.id || 1}/${
-							toToken2.address
+					name: toToken2.name || toToken2.address.slice(0, 4) + '...' + toToken2.address.slice(-4),
+					label: toToken2.symbol || toToken2.address.slice(0, 4) + '...' + toToken2.address.slice(-4),
+					symbol: toToken2.symbol || '',
+					address: toToken2.address,
+					value: toToken2.address,
+					decimals: toToken2.decimals,
+					logoURI: `https://token-icons.llamao.fi/icons/tokens/${selectedChain.id || 1}/${toToken2.address
 						}?h=20&w=20`,
-						chainId: selectedChain.id || 1,
-						geckoId: null
-				  }
+					chainId: selectedChain.id || 1,
+					geckoId: null
+				}
 				: selectedToToken;
 
 		return { finalSelectedFromToken, finalSelectedToToken };
@@ -578,9 +576,9 @@ export function AggregatorContainer({ tokenList, sandwichList }) {
 			}
 			return isOutputTrade
 				? typeof a.amountInUsd === 'number' &&
-				  typeof a.gasUsd === 'number' &&
-				  typeof b.amountInUsd === 'number' &&
-				  typeof b.gasUsd === 'number'
+					typeof a.gasUsd === 'number' &&
+					typeof b.amountInUsd === 'number' &&
+					typeof b.gasUsd === 'number'
 					? a.amountInUsd + a.gasUsd - (b.amountInUsd + b.gasUsd)
 					: Number(a.amountIn) - Number(b.amountIn)
 				: b.netOut - a.netOut;
@@ -681,12 +679,12 @@ export function AggregatorContainer({ tokenList, sandwichList }) {
 
 	const selectedRoutesPriceImpact =
 		fromTokenPrice &&
-		toTokenPrice &&
-		priceImpactRoute &&
-		priceImpactRoute.amountUsd &&
-		priceImpactRoute.amountInUsd &&
-		(debouncedAmount || debouncedAmountOut) &&
-		!Number.isNaN(Number(priceImpactRoute.amountUsd))
+			toTokenPrice &&
+			priceImpactRoute &&
+			priceImpactRoute.amountUsd &&
+			priceImpactRoute.amountInUsd &&
+			(debouncedAmount || debouncedAmountOut) &&
+			!Number.isNaN(Number(priceImpactRoute.amountUsd))
 			? 100 - (Number(priceImpactRoute.amountUsd) / Number(priceImpactRoute.amountInUsd)) * 100
 			: null;
 
@@ -696,10 +694,10 @@ export function AggregatorContainer({ tokenList, sandwichList }) {
 
 	const insufficientBalance =
 		balance.isSuccess &&
-		balance.data &&
-		!Number.isNaN(Number(balance.data.formatted)) &&
-		balance.data.value &&
-		selectedRoute
+			balance.data &&
+			!Number.isNaN(Number(balance.data.formatted)) &&
+			balance.data.value &&
+			selectedRoute
 			? +selectedRoute?.fromAmount > +balance.data.value
 			: false;
 
@@ -716,9 +714,9 @@ export function AggregatorContainer({ tokenList, sandwichList }) {
 	const amountToApprove =
 		amountOut && amountOut !== ''
 			? BigNumber(selectedRoute?.fromAmount)
-					.times(100 + Number(slippage) * 2)
-					.div(100)
-					.toFixed(0)
+				.times(100 + Number(slippage) * 2)
+				.div(100)
+				.toFixed(0)
 			: selectedRoute?.fromAmount;
 	const {
 		isApproved,
@@ -902,14 +900,14 @@ export function AggregatorContainer({ tokenList, sandwichList }) {
 
 	const pairSandwichData =
 		sandwichList?.[selectedChain?.value]?.[
-			normalizeTokens(
-				finalSelectedFromToken?.address === ethers.constants.AddressZero
-					? WETH[selectedChain?.value]
-					: finalSelectedFromToken?.address,
-				finalSelectedToToken?.address === ethers.constants.AddressZero
-					? WETH[selectedChain?.value]
-					: finalSelectedToToken?.address
-			).join('')
+		normalizeTokens(
+			finalSelectedFromToken?.address === ethers.constants.AddressZero
+				? WETH[selectedChain?.value]
+				: finalSelectedFromToken?.address,
+			finalSelectedToToken?.address === ethers.constants.AddressZero
+				? WETH[selectedChain?.value]
+				: finalSelectedToToken?.address
+		).join('')
 		];
 
 	const isAmountSynced = debouncedAmount === formatAmount(amount) && formatAmount(amountOut) === debouncedAmountOut;
@@ -983,7 +981,7 @@ export function AggregatorContainer({ tokenList, sandwichList }) {
 			<BodyWrapper>
 				<Body>
 					<div>
-						<HStack>
+						{/* <HStack>
 							<Button
 								onClick={setAggFlag.on}
 								borderRadius="12px"
@@ -1004,7 +1002,7 @@ export function AggregatorContainer({ tokenList, sandwichList }) {
 							>
 								UniSwap
 							</Button>
-						</HStack>
+						</HStack> */}
 					</div>
 					{!aggFlag ? (
 						<SwapBody>
@@ -1181,13 +1179,12 @@ export function AggregatorContainer({ tokenList, sandwichList }) {
 																{isUSDTNotApprovedOnEthereum && (
 																	<Flex flexDir="column" gap="4px" w="100%">
 																		<Text fontSize="0.75rem" fontWeight={400}>
-																			{`${
-																				finalSelectedFromToken?.symbol
-																			} uses an old token implementation that requires resetting approvals if there's a
+																			{`${finalSelectedFromToken?.symbol
+																				} uses an old token implementation that requires resetting approvals if there's a
 																		previous approval, and you currently have an approval for ${(
-																			Number(allowance) /
-																			10 ** finalSelectedFromToken?.decimals
-																		).toFixed(2)} ${finalSelectedFromToken?.symbol} for this contract, you
+																					Number(allowance) /
+																					10 ** finalSelectedFromToken?.decimals
+																				).toFixed(2)} ${finalSelectedFromToken?.symbol} for this contract, you
 																		need to reset your approval and approve again`}
 																		</Text>
 																		<Button
@@ -1240,10 +1237,10 @@ export function AggregatorContainer({ tokenList, sandwichList }) {
 																		{!selectedRoute
 																			? 'Select Aggregator'
 																			: isApproved
-																			? `Swap via ${selectedRoute?.name}`
-																			: slippageIsWong
-																			? 'Set Slippage'
-																			: 'Approve'}
+																				? `Swap via ${selectedRoute?.name}`
+																				: slippageIsWong
+																					? 'Set Slippage'
+																					: 'Approve'}
 																	</Button>
 																)}
 
@@ -1309,13 +1306,12 @@ export function AggregatorContainer({ tokenList, sandwichList }) {
 													{isUSDTNotApprovedOnEthereum && (
 														<Flex flexDir="column" gap="4px" w="100%">
 															<Text fontSize="0.75rem" fontWeight={400}>
-																{`${
-																	finalSelectedFromToken?.symbol
-																} uses an old token implementation that requires resetting approvals if there's a
+																{`${finalSelectedFromToken?.symbol
+																	} uses an old token implementation that requires resetting approvals if there's a
 														previous approval, and you currently have an approval for ${(
-															Number(allowance) /
-															10 ** finalSelectedFromToken?.decimals
-														).toFixed(2)} ${finalSelectedFromToken?.symbol} for this contract, you
+																		Number(allowance) /
+																		10 ** finalSelectedFromToken?.decimals
+																	).toFixed(2)} ${finalSelectedFromToken?.symbol} for this contract, you
 														need to reset your approval and approve again`}
 															</Text>
 															<Button
@@ -1373,10 +1369,10 @@ export function AggregatorContainer({ tokenList, sandwichList }) {
 															{!selectedRoute
 																? 'Select Aggregator'
 																: isApproved
-																? `Swap via ${selectedRoute.name}`
-																: slippageIsWong
-																? 'Set Slippage'
-																: 'Approve'}
+																	? `Swap via ${selectedRoute.name}`
+																	: slippageIsWong
+																		? 'Set Slippage'
+																		: 'Approve'}
 														</Button>
 													)}
 
@@ -1653,7 +1649,7 @@ export function AggregatorContainer({ tokenList, sandwichList }) {
 				{/* </Routes> */}
 			</BodyWrapper>
 
-			{window === parent ? <FAQs /> : null}
+			{/* {window === parent ? <FAQs /> : null} */}
 
 			<TransactionModal open={txModalOpen} setOpen={setTxModalOpen} link={txUrl} />
 		</Wrapper>

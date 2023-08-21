@@ -2,7 +2,7 @@ import * as React from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 import ThemeProvider, { GlobalStyle } from '~/Theme';
-import { Phishing } from './Phishing';
+// import { Phishing } from './Phishing';
 
 const PageWrapper = styled.div`
 	flex: 1;

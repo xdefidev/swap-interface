@@ -1011,7 +1011,7 @@ export function AggregatorContainer({ tokenList, sandwichList }) {
 									<Flex>
 										<Box>Chain</Box>
 										<Spacer />
-										<Tooltip content="Redirect requests through the DefiLlama Server to hide your IP address">
+										{/* <Tooltip content="Redirect requests through the DefiLlama Server to hide your IP address">
 											<FormControl display="flex" alignItems="baseline" gap="6px" justifyContent={'center'}>
 												<FormLabel htmlFor="privacy-switch" margin={0} fontSize="14px" color="gray.400">
 													Hide IP
@@ -1022,7 +1022,7 @@ export function AggregatorContainer({ tokenList, sandwichList }) {
 													isChecked={isPrivacyEnabled}
 												/>
 											</FormControl>
-										</Tooltip>
+										</Tooltip> */}
 										<SettingsIcon
 											onClick={() => setSettingsModalOpen((open) => !open)}
 											ml={4}

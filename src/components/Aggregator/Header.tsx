@@ -1,6 +1,6 @@
 import { Heading, Image } from '@chakra-ui/react';
 import styled from 'styled-components';
-import loaderImg from '~/public/zebra.png';
+import loaderImg from '~/public/zebra.jpg';
 
 const Wrapper = styled.div`
 	position: absolute;

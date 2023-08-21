@@ -1,5 +1,5 @@
 import { Points } from '@openspace-protocol/sdk';
-import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { ConnectButton, darkTheme } from '@rainbow-me/rainbowkit';
 import styled from 'styled-components';
 import { useAccount } from 'wagmi';
 import { HistoryModal } from '../HistoryModal';
